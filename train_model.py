@@ -20,6 +20,7 @@ data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
+
 train, test = train_test_split(data, random_state = 42)
 
 # DO NOT MODIFY
@@ -39,7 +40,7 @@ X_train, y_train, encoder, lb = process_data(
     X = train, 
     categorical_features = cat_features,
     training = True,
-    label = "salary"
+    label = 'salary'
     # your code here
     # use the train dataset 
     # use training=True
@@ -50,7 +51,7 @@ X_test, y_test, _, _ = process_data(
     test,
     categorical_features=cat_features,
     training=False,
-    label = "salary",
+    label = 'salary',
     encoder=encoder,
     lb=lb
 )
@@ -63,6 +64,7 @@ model_path = os.path.join(project_path, "model", "model.pkl")
 save_model(model, model_path)
 encoder_path = os.path.join(project_path, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
+print("Model and Encoder saved in Directory:", project_path)
 
 # load the model
 model = load_model(
@@ -81,7 +83,6 @@ print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}")
 for col in cat_features:
     # iterate through the unique values in one categorical feature
     for slicevalue in sorted(test[col].unique()):
-        print(sorted(test[col].unique()))
         count = test[test[col] == slicevalue].shape[0]
         p, r, fb = performance_on_categorical_slice(
             data = test,
@@ -89,12 +90,14 @@ for col in cat_features:
             slice_value = slicevalue,
             column_name = col, 
             categorical_features= cat_features,
-            label="salary",
+            label = 'salary',
             encoder=encoder,
             lb=lb
             # your code here
             # use test, col and slicevalue as part of the input
         )
+        if os.path.exists("slice_output.txt"):
+            os.remove("slice_output.txt")
         with open("slice_output.txt", "a") as f:
             print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
             print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)

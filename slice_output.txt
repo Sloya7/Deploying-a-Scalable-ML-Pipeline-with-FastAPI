@@ -1,0 +1,2 @@
+native-country: Yugoslavia, Count: 4
+Precision: 1.0000 | Recall: 0.0000 | F1: 0.0000
