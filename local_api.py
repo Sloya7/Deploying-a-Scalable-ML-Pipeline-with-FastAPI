@@ -33,7 +33,7 @@ data = {
 }
 
 # TODO: send a POST using the data above
-response = requests.post(f"{url}/data/", data)
+response = requests.post(f"{url}/data/",data = data)
 
 
 # TODO: print the status code
