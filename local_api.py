@@ -33,11 +33,11 @@ data = {
 }
 
 # TODO: send a POST using the data above
-response = requests.post(f"{url}/data/",data = data)
+r = requests.post(f"{url}/data/", json = data)
 
 
 # TODO: print the status code
-print(response.status_code)
+print(r.status_code)
 
 # TODO: print the result
-print(response.json())
+print(r.json())
