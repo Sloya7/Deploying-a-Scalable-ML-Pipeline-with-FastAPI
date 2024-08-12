@@ -56,7 +56,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : ???
+    model : RandomForestClassifier
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -119,7 +119,7 @@ def performance_on_categorical_slice(
         Trained sklearn OneHotEncoder, only used if training=False.
     lb : sklearn.preprocessing._label.LabelBinarizer
         Trained sklearn LabelBinarizer, only used if training=False.
-    model : ???
+    model : RandomForestClassifer
         Model used for the task.
 
     Returns
