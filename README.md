@@ -1,6 +1,6 @@
 # Developing a ML Pipeline using FASTAPI
 
-##Synopsis
+## Synopsis
 This project is designed to explore and practice the connecting the following abilities:
     Producing a viable ML model for classifing data and predicting a single outcome
     Saving the model for additional queries
