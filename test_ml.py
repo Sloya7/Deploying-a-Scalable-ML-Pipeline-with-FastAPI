@@ -42,4 +42,4 @@ def test_compute_metics_floats():
     returns = [p,r,fb]
     for i in range(len(returns)):
         val = returns[i]
-        assert type(val) == np.float64, ("Return values not a float")
+        assert type(val) == np.float64, "Return values not a float"
