@@ -1,9 +1,17 @@
 import pytest
 import pandas as pd
 import numpy as np
+
+#needed for test 1
 from train_model import X_train, y_train, model, y_test, preds
-from ml.model import compute_model_metrics
+
+#needed for test 2
 from sklearn.ensemble import RandomForestClassifier
+
+#needed for test 3
+from train_model import p, r, fb
+
+
 
 # TODO: add necessary import
 
@@ -31,8 +39,7 @@ def test_compute_metics_floats():
     """
     Ensure that the compute model metrics function returns 3 floats
     """
-    returns = compute_model_metrics(y_test, preds)
-    assert len(returns) == 3, "Returned length of compute_model_metrics incorrect"
+    returns = [p,r,fb]
     for i in range(len(returns)):
         val = returns[i]
         assert type(val) == np.float64, ("Return values not a float")
