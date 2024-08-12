@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults: 
       run:
-        working-directory: /home/sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
+        working-directory: //wsl.localhost/Ubuntu/home/sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
 
     steps:
     - uses: actions/checkout@v4
