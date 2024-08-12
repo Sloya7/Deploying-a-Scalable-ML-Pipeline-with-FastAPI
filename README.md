@@ -1,31 +1,39 @@
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
+# Developing a ML Pipeline using FASTAPI
 
-# Environment Set up (pip or conda)
-* Option 1: use the supplied file `environment.yml` to create a new environment with conda
-* Option 2: use the supplied file `requirements.txt` to create a new environment with pip
+##Synopsis
+This project is designed to explore and practice the connecting the following abilities:
+    Producing a viable ML model for classifing data and predicting a single outcome
+    Saving the model for additional queries
+    Generating a pipeline for the future queries
+    Completing the project with GitHub actions
+
+
+## Environment Set up (pip or conda)
+This project was developed under a WSL vitrual environment and VS Code. A requirements.txt file is available for specific dependency versioning. Using following code or close variation of the code will give the deisred environment dependencies:
+
+    #Intial environment code:
+    conda env create -f environment.yml
+
+
     
-## Repositories
+## GitHub Repository
 GitHub repo link: https://github.com/Sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
 
-* Create a directory for the project and initialize git.
-    * As you work on the code, continually commit changes. Trained models you want to use in production must be committed to GitHub.
-* Connect your local git repo to GitHub.
-* Setup GitHub Actions on your repo. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
-    * Make sure you set up the GitHub Action to have the same version of Python as you used in development.
+## Data
+This project using the census.csv data supplied in the initial project package. This project avoids hard-coding so the file input lines in train_model line 17 will help with any adjustments for different files. 
 
-# Data
-* Download census.csv and commit it to dvc.
-* This data is messy, try to open it in pandas and see what you get.
-* To clean it, use your favorite text editor to remove all spaces.
+## Model
+A random forest classifier is utilized for this project. If different types of data is used in the future, a new file testing the efficiency of different models could be added. The used model is then saved and called upon from a sub directory of the parent directory for the project. 
 
-# Model
-* Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.
-* Write unit tests for at least 3 functions in the model code.
-* Write a function that outputs the performance of the model on slices of the data.
-    * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
-* Write a model card using the provided template.
+## API Functionallity
+The API functions are simple to display the ability to successfully integrate API communication into a pipeline. This project used a local 127.0.0.1 api system for testing and dispays a simple message. The local_apy.py file is best used to check for api functionallity on new machines or environments in the following code line:
 
-# API Creation
-*  Create a RESTful API using FastAPI this must implement:
-    * GET on the root giving a welcome message.
-    * POST that does model inference.
+    #testing local_api
+    python local_api.py
+Inside the local_api.py file on line 7 is the line for adjusting the local address if needed. 
+
+
+##Project function
+Once any adjustments for files and API integration are completed, to stay cmopliant with project stipulations, this set up takes in the data in local_api.py to process. Further development could make the input a user direct input or fill in a file that is already formatted for a parser. 
+
+Initial project packet sourced from the branch:  udacity/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
