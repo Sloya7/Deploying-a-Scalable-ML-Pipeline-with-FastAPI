@@ -36,5 +36,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
-      working-directory: ./Ubuntu/home/sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
+        pytest test_ml.py
