@@ -7,7 +7,7 @@ import os
 
 
 #needed for test 1
-import train_model 
+from train_model import * 
 
 #needed for test 2
 from sklearn.ensemble import RandomForestClassifier
