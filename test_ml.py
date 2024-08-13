@@ -8,11 +8,12 @@ import os
 data_path = "/data/cencus.csv"
 data = pd.read_csv(data_path)
 
-train, test = train_test_split(data, random_state = 42)
+
 
 
 #needed for test 1
 from train_model import X_train, y_train, model, y_test, preds, data 
+train, test = train_test_split(data, random_state = 42)
 
 #needed for test 2
 from sklearn.ensemble import RandomForestClassifier
