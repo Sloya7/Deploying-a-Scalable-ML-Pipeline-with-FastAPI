@@ -3,15 +3,9 @@ import pandas as pd
 import numpy as np
 import os
 
-#needed to create relative file path instead of using the absolute
-if os.path.exists(data):
-    data = data
-else:
-    data = "data/census.csv"
-
 
 #needed for test 1
-from train_model import X_train, y_train, model, y_test, preds
+from train_model import X_train, y_train, model, y_test, preds, data 
 
 #needed for test 2
 from sklearn.ensemble import RandomForestClassifier
