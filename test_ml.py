@@ -12,9 +12,6 @@ from sklearn.ensemble import RandomForestClassifier
 #needed for test 3
 from train_model import p, r, fb
 
-test_path = "/home/runner/work/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
-data = pd.read_csv(os.path.join(test_path, "data", "census.csv"))
-
 
 # TODO: implement the first test. Change the function name and input as needed
 def test_train_data_NAs():
