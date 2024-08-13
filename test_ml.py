@@ -7,6 +7,12 @@ import os
 #needed for test 1
 from train_model import X_train, y_train, model, y_test, preds, data 
 
+if os.path.exists("/home/sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/data/census.csv"):
+    data_path = "/home/sloya7/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/data/census.csv"
+else:
+    data_path = "/data/cencus.csv"
+
+
 #needed for test 2
 from sklearn.ensemble import RandomForestClassifier
 
